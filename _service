@@ -2,4 +2,11 @@
   <service name="rust2rpm" mode="manual">
     <param name="pkgid">rustix</param>
   </service>
+  <service name="perl_regex" mode="manual">
+    <param name="file">rust-rustix.spec</param>
+    <param name="regexfile">regex.pl</param>
+  </service>
+  <service name="run" mode="manual">
+    <param name="command">cp *.spec "${outdir:-.}"; for com in rustc-dep-of-std rustc-std-workspace-alloc compiler_builtins core; do sed -i "/%package.*${com}/,/.*Cargo.toml.*/d;" "${outdir:-.}/"*.spec; done</param>
+  </service>
 </services>

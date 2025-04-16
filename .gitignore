@@ -1,3 +1,5 @@
 *.spec
 *.crate
 .osc.temp
+*.tar.gz
+*.diff
