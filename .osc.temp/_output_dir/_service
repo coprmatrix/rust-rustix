@@ -1,5 +1,0 @@
-<services>
-  <service name="rust2rpm" mode="manual">
-    <param name="pkgid">rustix</param>
-  </service>
-</services>
